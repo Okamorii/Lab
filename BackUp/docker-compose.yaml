@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati_
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+    volumes:
+      - /home/maxime/Documents/container/duplicati/config:/config
+      - /home/maxime/Documents/container/duplicati/backups:/backups
+      - /home/maxime:/source
+    ports:
+      - 8200:8200
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower
+    environment: 
+      - TZ=Asia/Baku
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 86400
+    restart: unless-stopped
