@@ -1,0 +1,155 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/v5/search for icons options
+
+title: "Max-Lab_dashboard"
+subtitle: "Homer"
+logo: "logo.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: false
+#'<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
+
+# Optional theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#3273dc"
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#3273dc"
+    link-hover: "#ffdd57"
+
+message:
+  style: "is-danger"
+  title: "DuckDuckGo Search Box"
+  icon: "fa fa-exclamation-triangle"
+  content: '<iframe src="https://duckduckgo.com/search.html?prefill=Search DuckDuckGo&focus=yes&kz=1&kac=1&kn=1&kp=-2&k1=-1" style="overflow:hidden;margin:0;padding:0;width:calc(100% - 100px);height:60px;" frameborder="0"></iframe>'
+# Optional message
+#message:
+#  url: https://b4bz.io
+#  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+#  title: "Test"
+#  icon: "fa fa-grin"
+#  content: "This is my home lab."
+
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Home-Lab"
+    icon: "fab fa-github"
+    url: "https://github.com/Okamorii/Lab"
+  - name: "Website"
+    icon: "fab fa-github"
+    url: "https://github.com/Okamorii/Website"
+
+  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
+  # see url field and assets/additional-page.yml.dist used in this example:
+  #- name: "another page!"
+  #  icon: "fas fa-file-alt"
+  #  url: "#additional-page" 
+
+# Services 
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Applications"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Dashboard"
+        logo: "logo.png"
+        subtitle: "Dashboard"
+        tag: "app"
+        url: "https://dash.max-lab.net"
+      - name: "PiHole"
+        logo: "assets/tools/pihole.png"
+        subtitle: "Pihole"
+        tag: "app"
+        url: "http://192.168.0.175/admin"
+      - name: "Guacamole"
+        logo: "assets/tools/guacamole.png"
+        subtitle: ""
+        tag: "app"
+        url: "http://192.168.0.175:8082"
+      - name: "home-assistant"
+        logo: "assets/tools/home-assistant.png"
+        subtitle: ""
+        tag: "app"
+        url: "https://homeassistant.max-lab.net"
+
+  - name: "Media"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Jellyfiin"
+        logo: "assets/tools/jellyfin.png"
+        subtitle: ""
+        tag: "app"
+        keywords: "Jellyfin"
+        url: "https://jellyfin.max-lab.net"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Audiobookshelf"
+        logo: "assets/tools/audiobookshelf.png"
+        subtitle: "Audiobook catalog"
+        tag: "app"
+        url: "https://audiobook.max-lab.net"
+      - name: "Radarr"
+        logo: "assets/tools/radarr.png"
+        subtitle: "Download Movies"
+        tag: "app"
+        url: "https://radarr.max-lab.net"
+      - name: "Sonarr"
+        logo: "assets/tools/sonarr.png"
+        subtitle: "Download TV Shows"
+        tag: "app"
+        url: "https://sonarr.max-lab.net"
+      - name: "Bazarr"
+        logo: "assets/tools/bazarr.png"
+        subtitle: "Download Subtitles"
+        tag: "app"
+        url: "https://bazarr.max-lab.net"
+      - name: "Deluge"
+        logo: "assets/tools/deluge.png"
+        subtitle: "Downloader"
+        tag: "app"
+        url: "https://deluge.max-lab.net"
+
+        
+  - name: "BackUp/Management"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Portainer"
+        logo: "assets/tools/portainer.png"
+        subtitle: "Container Manager"
+        tag: "app"
+        keywords: "Container Manager"
+        url: "https://portainer.max-lab.net"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Duplicati"
+        logo: "assets/tools/duplicati.png"
+        subtitle: ""
+        tag: "app"
+        keywords: "BackUp"
+        url: "https://backup.max-lab.net"
+        target: "_blank" # optional html a tag target attribute
