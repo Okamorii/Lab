@@ -1,4 +1,4 @@
-### Homelab
+# Homelab
 
 This is my homelab
 All the containers that I am running, the docker compose files of each of them and I will try to add information for each of them little by little.
