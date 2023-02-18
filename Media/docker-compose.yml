@@ -1,0 +1,125 @@
+version: "3"
+services: 
+
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+      - AUTO_UPDATE=true #optional
+    volumes:
+      - /opt/container/jackett/config:/config
+      - /home/maxime/media/torrent:/downloads
+    ports:
+      - 9117:9117
+    restart: unless-stopped
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+    volumes:
+      - /opt/container/jellyfin/config:/config
+      - /home/maxime/media/tvshows:/data/tvshows
+      - /home/maxime/media/tvshows2:/data/tvshows2
+      - /home/maxime/media/movies:/data/movies
+      - /home/maxime/media/movies2:/data/movies2
+      - /home/maxime/media/disney:/data/disney
+      - /home/maxime/media/disney2:/data/disney2
+      - /home/maxime/media/anime:/data/anime
+      - /home/maxime/media/anime2:/data/anime2
+      - /home/maxime/media/musics:/data/music
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr_
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+    volumes:
+      - /opt/container/radarr/config:/config
+      - /home/maxime/media/downloads:/downloads
+      - /home/maxime/media/movies:/data/movies
+      - /home/maxime/media/movies2:/data/movies2
+      - /home/maxime/media/disney:/data/disney
+      - /home/maxime/media/disney2:/data/disney2
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr_
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+    volumes:
+      - /opt/container/sonarr/config:/config
+      - /home/maxime/media/tvshows:/data/tvshows
+      - /home/maxime/media/tvshows2:/data/tvshows2
+      - /home/maxime/media/downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+    
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge_
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+    volumes:
+      - /opt/container/deluge/config:/config
+      - /home/maxime/media/downloads:/downloads
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr_
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Baku
+   # DOCKER_MODS=wayller/bazarr-mod-subsync:latest
+    volumes:
+      - /opt/container/bazarr/config:/config
+      - /home/maxime/media/tvshows:/data/tvshows
+      - /home/maxime/media/tvshows2:/data/tvshows2
+      - /home/maxime/media/movies:/data/movies
+      - /home/maxime/media/movies2:/data/movies2
+      - /home/maxime/media/disney:/data/disney
+      - /home/maxime/media/disney2:/data/disney2
+      - /home/maxime/media/anime:/data/anime
+      - /home/maxime/media/anime2:/data/anime2
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    environment:
+      - AUDIOBOOKSHELF_UID=99
+      - AUDIOBOOKSHELF_GID=100
+    ports:
+      - 13378:80
+    volumes:
+      - /home/maxime/media/audiobooks:/audiobooks
+      - /home/maxime/media/audiobooks/metadata:/metadata
+      - /opt/container/audiobooks/config:/config
+    restart: unless-stopped
