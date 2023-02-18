@@ -1,3 +1,6 @@
+# This will create the docker not in /OPT but directly in the lab directory because other files need to be modified + all the icons' images.
+# And there is not a lot of files anyway 
+
 ---
 version: "2"
 services:
