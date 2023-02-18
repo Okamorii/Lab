@@ -1,4 +1,4 @@
-# Homelab
+### Homelab
 
 This is my homelab
 All the containers that I am running, the docker compose files of each of them and I will try to add information for each of them little by little.
@@ -30,7 +30,7 @@ All the containers that I am running, the docker compose files of each of them a
 ## Cloudflare Tunnel
 1 Need to install Cloudflare and the tunnel. Information found on the tunnel cloudflare directly
 
-
+## GITHUB
 How to sync GIT and vscode 
 
 
