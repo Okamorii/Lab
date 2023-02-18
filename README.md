@@ -31,7 +31,7 @@ All the containers that I am running, the docker compose files of each of them a
 1 Need to install Cloudflare and the tunnel. Information found on the tunnel cloudflare directly
 
 
-
+How to sync GIT and vscode 
 
 
 
