@@ -114,6 +114,11 @@ services:
         subtitle: "Audiobook catalog"
         tag: "app"
         url: "https://audiobook.max-lab.net"
+
+
+  - name: "Softwarr"
+    icon: "fas fa-cloud"
+    items:
       - name: "Radarr"
         logo: "assets/tools/radarr.png"
         subtitle: "Download Movies"
@@ -135,7 +140,6 @@ services:
         tag: "app"
         url: "https://deluge.max-lab.net"
 
-        
   - name: "BackUp/Management"
     icon: "fas fa-cloud"
     items:
